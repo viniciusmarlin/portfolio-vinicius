@@ -43,8 +43,8 @@ Thumbs.db
 *.sw?
 
 # Local workspace and database files
-Data/
-Transfers/
+/Data/
+/Transfers/
 *.db
 *.sqlite
 *.sqlite3
