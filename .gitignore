@@ -45,6 +45,7 @@ Thumbs.db
 # Local workspace and database files
 /Data/
 /Transfers/
+/docs/
 *.db
 *.sqlite
 *.sqlite3

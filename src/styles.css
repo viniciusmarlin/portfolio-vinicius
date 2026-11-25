@@ -3,3 +3,51 @@
 @media(max-width:800px){.container{width:min(100% - 40px,620px)}.hero{grid-template-columns:1fr;gap:0;padding-top:68px}.hero-art{height:330px;margin-top:20px}.hero-copy{max-width:none}.eyebrow{margin-bottom:34px}.about-grid{grid-template-columns:1fr;gap:30px}.skills-grid{grid-template-columns:repeat(2,1fr)}.projects-heading{align-items:start;gap:15px;flex-direction:column}.projects-grid{gap:14px}.project-preview{height:185px}}
 @media(max-width:540px){.container{width:calc(100% - 36px)}.navbar{height:66px}.nav-links{gap:15px;font-size:11px}.nav-cta{font-size:0;padding:9px 11px}.nav-cta span{font-size:14px;margin:0}.brand{font-size:14px}.hero{min-height:auto;padding-block:67px 70px}.hero h1{font-size:43px;letter-spacing:-2.2px}.hero-role{font-size:17px}.hero-description{font-size:15px}.hero-art{height:290px}.orbit-one{width:330px}.orbit-two{width:310px}.chip-top{right:-2px;top:27px}.chip-bottom{left:0;bottom:20px}.section{padding-block:70px}.section-heading h2{font-size:30px;letter-spacing:-1.8px}.about-lead>p{font-size:20px}.skills-grid{gap:23px 12px;margin-top:38px}.projects-grid{grid-template-columns:1fr}.project-preview{height:205px}.project-content>p{min-height:0}.footer{padding-top:67px}.footer-main{align-items:flex-start;flex-direction:column;gap:20px;padding-bottom:45px}.footer h2{font-size:39px}.footer-bottom{gap:15px;flex-wrap:wrap}.footer-bottom>span{order:3;width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+.button-outline{border:1px solid #303944;color:#c4cdd5;background:transparent}.button-outline:hover{border-color:#647a58;color:var(--accent)}.hero-actions{flex-wrap:wrap}
+.resume-picker{position:relative}.resume-trigger{font:inherit;cursor:pointer}.resume-options{position:absolute;top:calc(100% + 8px);left:0;z-index:5;min-width:200px;padding:5px;border:1px solid #303944;border-radius:6px;background:#0d1219;box-shadow:0 14px 32px #0009}.resume-options a{display:flex;align-items:center;gap:9px;padding:10px;border-radius:4px;font-size:12px;color:#c4cdd5;white-space:nowrap}.resume-options a:hover,.resume-options a:focus-visible{background:#17211d;color:var(--accent);outline:none}.resume-trigger:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Motion layer: entrance and scroll states animate only compositor properties. */
+@keyframes hero-copy-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:no-preference){
+  .hero-copy>.eyebrow,.hero-copy>.greeting,.hero-copy>h1,.hero-copy>.hero-role,.hero-copy>.hero-description,.hero-copy>.hero-position,.hero-copy>.hero-actions,.hero-copy>.location{animation:hero-copy-enter 620ms cubic-bezier(.16,1,.3,1) both}
+  .hero-copy>.eyebrow{animation-delay:40ms}.hero-copy>.greeting{animation-delay:100ms}.hero-copy>h1{animation-delay:160ms}.hero-copy>.hero-role{animation-delay:220ms}.hero-copy>.hero-description{animation-delay:280ms}.hero-copy>.hero-position{animation-delay:340ms}.hero-copy>.hero-actions{animation-delay:400ms}.hero-copy>.location{animation-delay:460ms}
+}
+.scroll-reveal{opacity:1;transform:none;transition:opacity 560ms cubic-bezier(.16,1,.3,1) var(--motion-delay,0ms),transform 560ms cubic-bezier(.16,1,.3,1) var(--motion-delay,0ms)}
+.scroll-motion-ready .scroll-reveal:not(.scroll-revealed){opacity:0;transform:translateY(20px)}
+.button,.nav-cta,.nav-links a,.icon-button,.project-links a,.project-github,.footer-socials a{transition:transform 180ms cubic-bezier(.2,.8,.2,1),opacity 180ms ease}
+.button:hover,.nav-cta:hover,.icon-button:hover,.project-links a:hover,.project-github:hover,.footer-socials a:hover{transform:translateY(-2px)}
+.nav-links a{display:inline-block}
+.nav-links a:hover{transform:translateY(-1px)}
+.button:active,.icon-button:active,.nav-cta:active,.project-links a:active,.project-github:active,.footer-socials a:active{transform:scale(.97)}
+.project-card{position:relative;transition:transform 220ms cubic-bezier(.2,.8,.2,1)}
+.project-card::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:0 14px 34px #0008;opacity:0;pointer-events:none;transition:opacity 220ms ease}
+.project-card:hover{transform:scale(1.012)}
+.project-card:hover::after{opacity:1}
+@media(prefers-reduced-motion:reduce){
+  .scroll-motion-ready .scroll-reveal:not(.scroll-revealed){opacity:1;transform:none}
+  .scroll-reveal{transition:opacity 140ms ease}
+  .hero-copy>.eyebrow,.hero-copy>.greeting,.hero-copy>h1,.hero-copy>.hero-role,.hero-copy>.hero-description,.hero-copy>.hero-position,.hero-copy>.hero-actions,.hero-copy>.location{animation:none}
+  .button:hover,.nav-cta:hover,.nav-links a:hover,.icon-button:hover,.project-links a:hover,.project-github:hover,.footer-socials a:hover,.project-card:hover{transform:none}
+  .button:active,.icon-button:active,.nav-cta:active,.project-links a:active,.project-github:active,.footer-socials a:active{transform:none}
+}
+
+.typewriter-shell{display:inline-grid;vertical-align:bottom}.typewriter-shell>*{grid-area:1/1}.typewriter-placeholder{visibility:hidden}.typewriter-value{white-space:nowrap}.typing-caret{display:inline-block;width:1px;height:.82em;margin-left:2px;vertical-align:-.08em;background:var(--accent);animation:caret-blink 850ms steps(2,start) infinite}@keyframes caret-blink{to{opacity:0}}.hero-role{min-height:1.35em}.code-keyword{color:#c792ea}.code-type{color:#82aaff}.code-string{color:var(--accent)}.code-lines p{min-height:2.25em}.code-card{transition:transform 260ms cubic-bezier(.2,.8,.2,1),opacity 260ms ease;transform-origin:center}@media(hover:hover) and (prefers-reduced-motion:no-preference){.hero-art:hover .code-card{transform:rotate(-3deg) scale(1.08)}}@media(prefers-reduced-motion:reduce){.typing-caret{animation:none;opacity:1}.code-card{transition:none}}
+
+.code-lines p{white-space:pre}
+
+.typewriter-shell{max-width:100%;white-space:normal}.typewriter-shell>*{min-width:0;overflow-wrap:normal}.typewriter-value{white-space:normal}.floating-chip{animation:none}@media(prefers-reduced-motion:no-preference){.chip-top{animation:chip-arrive 520ms cubic-bezier(.16,1,.3,1) 560ms both,chip-float 3.8s ease-in-out 1.2s infinite}.chip-bottom{animation:chip-arrive 520ms cubic-bezier(.16,1,.3,1) 680ms both,chip-float 4.2s ease-in-out 1.35s infinite}@keyframes chip-arrive{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}@keyframes chip-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}}@media(prefers-reduced-motion:reduce){.chip-top,.chip-bottom{animation:none;opacity:1;transform:none;translate:none}}
+
+.particle-field{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}.particle-field canvas{display:block;width:100%;height:100%;pointer-events:none}.code-card,.floating-chip{z-index:2}.orbit,.hero-glow{z-index:0}
+
+.app-shell{position:relative;isolation:isolate;min-height:100vh}.page-content{position:relative;z-index:1}.particle-field{position:fixed;inset:0;z-index:0;width:100vw;height:100vh;overflow:hidden;pointer-events:none}.particle-field canvas{display:block;width:100%;height:100%;pointer-events:none}
+
+/* Show the continuous canvas subtly through the project section only. */
+.projects-section{background:rgba(11,15,21,.86)}
+.project-card{background:rgba(12,17,24,.96)}
+.about-grid{background:radial-gradient(ellipse at 24% 48%,rgba(8,11,16,.82) 0%,rgba(8,11,16,.58) 44%,transparent 78%),radial-gradient(ellipse at 80% 50%,rgba(8,11,16,.82) 0%,rgba(8,11,16,.58) 44%,transparent 78%)}
+.project-tags .tag{transition:transform 180ms cubic-bezier(.2,.8,.2,1),opacity 180ms ease}
+.project-tags .tag:hover{transform:translateY(-2px);opacity:.82}
+.skills-grid .tag{transition:transform 180ms cubic-bezier(.2,.8,.2,1),opacity 180ms ease}
+.skills-grid .tag:hover{transform:translateY(-2px);opacity:.82}
+@media(prefers-reduced-motion:reduce){.project-tags .tag:hover,.skills-grid .tag:hover{transform:none}}
+.skills-grid{padding-bottom:28px}

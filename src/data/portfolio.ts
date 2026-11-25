@@ -40,6 +40,11 @@ export interface PortfolioData {
     linkedin: string;
     twitter?: string;
   };
+  resume: {
+    url: string;
+    viewLabel: string;
+    downloadLabel: string;
+  };
 }
 
 export const portfolioData: PortfolioData = {
@@ -136,5 +141,10 @@ export const portfolioData: PortfolioData = {
     github: "https://github.com/viniciusmarlin",
     linkedin: "https://www.linkedin.com/in/viniciusmarlin/",
     twitter: ""
+  },
+  resume: {
+    url: "/curriculo-vinicius-marlin.pdf",
+    viewLabel: "Visualizar currículo",
+    downloadLabel: "Baixar currículo"
   }
 };
